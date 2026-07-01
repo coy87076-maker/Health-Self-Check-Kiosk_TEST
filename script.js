@@ -1,4 +1,4 @@
-// ── CONFIG — paste your Apps Script /exec URL here ───────────────────────
+// ── Apps Script ───────────────────────
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz0xvumxPNPQQLfHApymUYc3IrH1Mi3-5psKYBQdPxXxRCxhH2YQWikr9lGKIWnjg78/exec';
 
 // ── BMI category data ─────────────────────────────────────────────────────
