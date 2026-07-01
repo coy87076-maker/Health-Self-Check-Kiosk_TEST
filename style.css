@@ -1,0 +1,279 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f0f4f8;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 16px 60px;
+}
+
+/* ── Wrapper ── */
+.wrap {
+  width: 100%;
+  max-width: 660px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Header ── */
+.kiosk-header {
+  background: #0d6e6e;
+  border-radius: 14px;
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.kiosk-header h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.kiosk-header p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 3px;
+}
+
+.header-badge {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+
+/* ── Card ── */
+.card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #e4e7ec;
+  padding: 22px 24px;
+}
+
+.card-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: #6b7280;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+/* ── Form grid ── */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 16px;
+}
+
+.form-grid .full {
+  grid-column: 1 / -1;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 10px 13px;
+  font-size: 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #f9fafb;
+  color: #111827;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: #0d6e6e;
+  box-shadow: 0 0 0 3px rgba(13, 110, 110, 0.12);
+  background: #fff;
+}
+
+/* ── Submit button ── */
+.btn-submit {
+  width: 100%;
+  padding: 13px;
+  background: #0d6e6e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: opacity 0.15s, transform 0.1s;
+  letter-spacing: 0.2px;
+}
+
+.btn-submit:hover  { opacity: 0.88; }
+.btn-submit:active { transform: scale(0.98); }
+
+/* ── Status message ── */
+.status-msg {
+  padding: 11px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  display: none;
+  margin-top: 10px;
+}
+
+.status-msg.error   { display: block; background: #fff5f5; border-left: 4px solid #c62828; color: #7f1d1d; }
+.status-msg.success { display: block; background: #f0fdf4; border-left: 4px solid #2e7d32; color: #1a4d1f; }
+.status-msg.info    { display: block; background: #f0f9ff; border-left: 4px solid #0d6e6e; color: #0c3d3d; }
+
+/* ── Result card ── */
+.result-card {
+  border-radius: 14px;
+  border: 1px solid #e4e7ec;
+  overflow: hidden;
+  display: none;
+}
+
+.result-card.visible { display: block; }
+
+.result-banner {
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.result-banner h2 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.result-banner p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 3px;
+  max-width: 360px;
+}
+
+/* ── BMI pill ── */
+.bmi-pill {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  padding: 8px 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.bmi-pill .bmi-label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.bmi-pill .bmi-val {
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+
+/* ── BMI meter ── */
+.bmi-meter-wrap {
+  background: #fff;
+  padding: 18px 24px 20px;
+}
+
+.meter-track {
+  position: relative;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(to right, #5DADE2 0%, #58D68D 30%, #F5B041 60%, #EC7063 100%);
+  margin-bottom: 6px;
+}
+
+.meter-needle {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #374151;
+  transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.meter-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #9ca3af;
+  margin-top: 4px;
+}
+
+/* ── Result details row ── */
+.result-details {
+  display: flex;
+  border-top: 1px solid #f1f3f5;
+  flex-wrap: wrap;
+}
+
+.detail-item {
+  flex: 1;
+  min-width: 100px;
+  padding: 14px 18px;
+  border-right: 1px solid #f1f3f5;
+}
+
+.detail-item:last-child { border-right: none; }
+
+.detail-item .dl {
+  font-size: 11px;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.detail-item .dv {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin-top: 2px;
+}
