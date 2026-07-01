@@ -1,5 +1,5 @@
 // ── Apps Script ───────────────────────
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz0xvumxPNPQQLfHApymUYc3IrH1Mi3-5psKYBQdPxXxRCxhH2YQWikr9lGKIWnjg78/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzZKPVifjvJY1xeyvALk0flwoHn4TWJxu8r-mJA2s4tjnKMxKcLrEhkZ0juoa8oK_Wl/exec';
 
 // ── BMI category data ─────────────────────────────────────────────────────
 const COLORS = {
