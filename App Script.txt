@@ -1,12 +1,6 @@
 function doPost(e) {
-  var sheet = SpreadsheetApp.openById('YOUR_SPREADSHEET_ID_HERE')
-                            .getActiveSheet();
-  var d = e.parameter;
- 
-  // Auto-add header row if sheet is empty
-  if (sheet.getLastRow() === 0) {
-    sheet.appendRow(['Date', 'Name', 'Age', 'Sex', 'Weight (kg)', 'Height (cm)', 'BMI', 'Category']);
-  }
+  const sheet = SpreadsheetApp.openById('1oOnGPe1KcdeNvi5BVzTz8QSoBonZE2iZt3ezyEnTZnc').getSheetByName(HealthCheck);
+  const data = e.parameter;
  
   sheet.appendRow([
     new Date(),
@@ -27,3 +21,4 @@ function doGet(e) {
     .createTextOutput(JSON.stringify({ status: 'ok', message: 'Health Kiosk API is running.' }))
     .setMimeType(ContentService.MimeType.JSON);
 }
+
