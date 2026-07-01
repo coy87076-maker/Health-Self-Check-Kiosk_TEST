@@ -1,17 +1,29 @@
 function doPost(e) {
- const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
- const data = JSON.parse(e.postData.contents);
- sheet.appendRow([
- new Date(),
- data.name,
- data.age,
- data.sex,
- data.weight,
- data.heightCm,
- data.bmi,
- data.category
- ]);
- return ContentService
- .createTextOutput(JSON.stringify({ status: 'success' }))
- .setMimeType(ContentService.MimeType.JSON);
+  var sheet = SpreadsheetApp.openById('YOUR_SPREADSHEET_ID_HERE')
+                            .getActiveSheet();
+  var d = e.parameter;
+ 
+  // Auto-add header row if sheet is empty
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow(['Date', 'Name', 'Age', 'Sex', 'Weight (kg)', 'Height (cm)', 'BMI', 'Category']);
+  }
+ 
+  sheet.appendRow([
+    new Date(),
+    d.name,
+    d.age,
+    d.sex,
+    d.weight,
+    d.heightCm,
+    d.bmi,
+    d.category
+  ]);
+ 
+  return ContentService.createTextOutput('Success');
+}
+ 
+function doGet(e) {
+  return ContentService
+    .createTextOutput(JSON.stringify({ status: 'ok', message: 'Health Kiosk API is running.' }))
+    .setMimeType(ContentService.MimeType.JSON);
 }
