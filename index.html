@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health Self-Check Kiosk</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<form id="bmiForm">
+ <label for="name">Full Name</label>
+ <input type="text" id="name" required>
+ <label for="age">Age</label>
+ <input type="number" id="age" min="1" max="120" required>
+ <label>Sex</label>
+ <select id="sex" required>
+ <option value="">Select</option>
+ <option value="Female">Female</option>
+ <option value="Male">Male</option>
+ </select>
+ <label for="weight">Weight (kg)</label>
+ <input type="number" id="weight" min="1" required>
+ <label for="height">Height (cm)</label>
+ <input type="number" id="height" min="1" required>
+ <button type="submit">Check My BMI</button>
+</form>
+<section id="resultCard" class="hidden"></section>
+
+<script src="script.js"> </script>
+</body>
+</html>
